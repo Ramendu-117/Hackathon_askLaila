@@ -188,6 +188,7 @@ public class results extends BasePage {
 			String err_msg = driver.findElement(By.xpath("//div[@class='_li']//div[contains(@class,'pam login_error_box')]")).getText();
 			System.out.println(" ");
 			System.out.println("Error message coming from entering invalid input : " + err_msg);
+			Thread.sleep(1000);
 			goToPage("Top car washing services near me in Bangalore - AskLaila");
 			Thread.sleep(1000);
 			share.click();
