@@ -37,6 +37,9 @@ public class results extends BasePage {
 	@FindBy(xpath = "//textarea[@class='form-control']") WebElement reportBox;
 	@FindBy(xpath = "//h4[text()='FIX THIS LISTING']/preceding-sibling::button") WebElement closeReportButton;
 	@FindBy(xpath = "//span[@class='fb fbicon shareIcon']") WebElement fbIcon;
+    @FindBy(xpath = "//input[@id='email']")WebElement fbEmail;
+    @FindBy(xpath = "//input[@id='pass']")WebElement fbPassword;
+    @FindBy(xpath = "//label[@id='loginbutton']")WebElement fbLogin;
 	@FindBy(xpath = "//span[@class='tw twicon shareIcon']") WebElement twitterIcon;
 	
 	
@@ -177,6 +180,14 @@ public class results extends BasePage {
 			goToPage("Facebook");
 			Thread.sleep(2000);
 			scShot.screenshot("//Facebook.png");
+			fbEmail.sendKeys("abc@xyz");
+			fbPassword.sendKeys("acbsdh1234");
+			fbLogin.click();
+			Thread.sleep(2000);
+			scShot.screenshot("//FacebookError.png");
+			String err_msg = driver.findElement(By.xpath("//div[@class='_li']//div[contains(@class,'pam login_error_box')]")).getText();
+			System.out.println(" ");
+			System.out.println("Error message coming from entering invalid input : " + err_msg);
 			goToPage("Top car washing services near me in Bangalore - AskLaila");
 			Thread.sleep(1000);
 			share.click();
@@ -187,6 +198,7 @@ public class results extends BasePage {
 			Thread.sleep(2000);
 			scShot.screenshot("//Twitter.png");
 			goToPage("Top car washing services near me in Bangalore - AskLaila");
+			
 			
 			WebElement reportButton = driver.findElement(By.xpath("(//button[@title='Report'])["+randomNumber+"]"));
 			highlightElement(reportButton);
