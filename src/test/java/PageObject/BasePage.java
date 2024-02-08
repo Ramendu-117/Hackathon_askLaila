@@ -18,11 +18,19 @@ public class BasePage extends BaseClass  {
 	}
 	
 	
-	public void highlightElement(WebElement element) {
+	public void highlightElement(WebElement element) 
+	{
 		try {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].setAttribute('style', 'border: 2px solid red;');", element);
-		}catch(Exception e) {}
+			
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].setAttribute('style', 'border: 2px solid red;');", element);
+		
+		}
+		
+		catch(Exception e) 
+		{
+			
+		}
 	}
 	
 }

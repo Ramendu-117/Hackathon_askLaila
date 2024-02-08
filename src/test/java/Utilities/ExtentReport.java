@@ -37,6 +37,7 @@ public class ExtentReport extends BaseClass implements ITestListener
 
  
 	public void onStart(ITestContext context) {
+		
 		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());// time stamp
 
 		repName = "Test-Report-" + timeStamp + ".html";

@@ -44,10 +44,9 @@ public class results extends BasePage {
 	
 	
 	
-	List<Map> maps = new ArrayList<Map>(); 
-	Map<String, String> nameAndRate= new HashMap<String,String>();
+	List<Map<String, String>> maps = new ArrayList<>();
+	Map<String,String> nameAndRate= new HashMap<String,String>();
 	Map<String, String> nameAndNumber = new HashMap<String, String>();
-	int l=0;
 	
 	
 	
@@ -86,15 +85,14 @@ public class results extends BasePage {
 		String xfile = System.getProperty("user.dir")+"\\TestData\\Car Washing services (Hackathon).xlsx";
 		System.out.println("The Names, Mobile No. and the Ratings of the Car Washing Service Centers are : ");
 		System.out.println("  ");
-		for(WebElement we : searchResults)
+		for(int i =0;i<searchResults.size();i++)
 		{
 			
-			String name = names.get(l).getText();
-			String rating = ratings.get(l).getText();
-			String mobNo = mobNos.get(l).getText();
+			String name = names.get(i).getText();
+			String rating = ratings.get(i).getText();
+			String mobNo = mobNos.get(i).getText();
 			nameAndRate.put(name, rating);
 			nameAndNumber.put(name, mobNo);
-			l++;
 		}
 		
 		maps.add(nameAndNumber);
@@ -111,11 +109,14 @@ public class results extends BasePage {
 			if(Double.parseDouble(rate)>4)
 			{
 				System.out.println("Name : "+name+", Numbers : "+no +", Rating : "+rate);
+				
 				ExcelUtils.setCellData(xfile, "Sheet1", index, 0, name);
 				ExcelUtils.setCellData(xfile, "Sheet1", index, 1, no);
 				ExcelUtils.setCellData(xfile, "Sheet1", index, 2, rate);
+				
 				index++;
 			}
+			
 			i++;
 		}
 		
@@ -157,6 +158,7 @@ public class results extends BasePage {
 			int randomNumber = randomNumberGenerator(searchResults.size());
 			
 			
+			//Clicking on the review button and writing a review 
 			WebElement reviewButton = driver.findElement(By.xpath("(//button[@class='hidden-xs btn btn-default cardFooterButtonBlue'])["+randomNumber+"]"));
 			highlightElement(reviewButton);
 			reviewButton.click();
@@ -167,7 +169,8 @@ public class results extends BasePage {
 			scShot.screenshot("//writeReview.png");
 			driver.navigate().back();
 			
-		
+			
+			//Clicking on the share button and then clicking on both the facebook and twitter option
 			WebElement share = driver.findElement(By.xpath("(//i[@class='glyphicon glyphicon-share whiteColor'])["+randomNumber+"]"));
 			highlightElement(share);
 			js.executeScript("arguments[0].scrollIntoView();",share);
@@ -201,6 +204,7 @@ public class results extends BasePage {
 			goToPage("Top car washing services near me in Bangalore - AskLaila");
 			
 			
+			//Clicking on the report button and writing a report
 			WebElement reportButton = driver.findElement(By.xpath("(//button[@title='Report'])["+randomNumber+"]"));
 			highlightElement(reportButton);
 			reportButton.click();
