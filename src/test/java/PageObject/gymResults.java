@@ -27,11 +27,15 @@ public class gymResults extends BasePage {
 	
 	
 	//Actions
+	
+	
+	//Click on the subCategory button and print all the subCategories
 	public void getSubCategoryValue() throws IOException
 	{
 		String xfile = System.getProperty("user.dir")+"\\TestData\\Car Washing services (Hackathon).xlsx";
 		int index = 1;
 		highlightElement(subCategory);
+		explicitWait(subCategory,5);
 		subCategory.click();
 		System.out.println("The subcategory values are : "); 
 		for(int i =0;i<subcategoryValue.size();i++)

@@ -15,17 +15,21 @@
     <classes>
       <class name="TestCase.TC005_gymResults">
         <methods>
+          <include name="clickingFreelisting"/>
           <include name="setUp"/>
-          <include name="test3"/>
-          <include name="text7"/>
-          <include name="test5"/>
-          <include name="test13"/>
+          <include name="enteringWrongInputs"/>
+          <include name="getErrorMessage"/>
+          <include name="clickingShareReviewReport"/>
+          <include name="gettingSubCategory"/>
+          <include name="ignoreAd"/>
+          <include name="backToSearchPage"/>
+          <include name="gettingCarWashResults"/>
+          <include name="clickingGym"/>
+          <include name="selectCountry"/>
           <include name="closeBrowser"/>
-          <include name="test8"/>
-          <include name="test9"/>
-          <include name="test4"/>
-          <include name="test14"/>
-          <include name="test10"/>
+          <include name="selectCity"/>
+          <include name="clickLogin"/>
+          <include name="enteringInputs"/>
         </methods>
       </class> <!-- TestCase.TC005_gymResults -->
     </classes>
@@ -41,12 +45,21 @@
     <classes>
       <class name="TestCase.TC005_gymResults">
         <methods>
+          <include name="clickingFreelisting"/>
+          <include name="getErrorMessage"/>
           <include name="setUp"/>
-          <include name="text7"/>
-          <include name="test5"/>
-          <include name="test13"/>
+          <include name="enteringWrongInputs"/>
+          <include name="clickingShareReviewReport"/>
+          <include name="gettingSubCategory"/>
+          <include name="ignoreAd"/>
+          <include name="backToSearchPage"/>
+          <include name="gettingCarWashResults"/>
+          <include name="clickingGym"/>
+          <include name="selectCountry"/>
+          <include name="clickLogin"/>
+          <include name="selectCity"/>
           <include name="closeBrowser"/>
-          <include name="test14"/>
+          <include name="enteringInputs"/>
         </methods>
       </class> <!-- TestCase.TC005_gymResults -->
     </classes>

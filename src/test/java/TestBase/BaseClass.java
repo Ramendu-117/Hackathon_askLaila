@@ -127,8 +127,8 @@ public class BaseClass {
 					}
 		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.get(p.getProperty("Url"));
 		driver.manage().window().maximize();
+		driver.get(p.getProperty("Url"));
 
 		
 	}

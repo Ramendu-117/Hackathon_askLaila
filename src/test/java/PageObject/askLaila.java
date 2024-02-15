@@ -27,6 +27,8 @@ public class askLaila extends BasePage {
 	
 	
 	//Actions 
+	
+	//Clicking on the roaming mode option
 	public void ignoreLogin()
 	{
 		try {
@@ -41,17 +43,22 @@ public class askLaila extends BasePage {
 		}
 	}
 	
+	
+	//Scrolling upto India option and then selecting India
 	public void selectCountry() throws Exception
 	{
+		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,300)","");
 		Thread.sleep(2000);
 		takeScreenShot scShot = new takeScreenShot(driver);
 		scShot.screenshot("//selectCountry.png");
+		explicitWait(countries.get(0),5);
 		countries.get(0).click();
 	}
 	
 	
+	//Scrolling upto Bangalore option and then selecting Bangalore
 	public void selectLocation()throws Exception
 	{
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -59,10 +66,13 @@ public class askLaila extends BasePage {
 		Thread.sleep(2000);
 		takeScreenShot scShot = new takeScreenShot(driver);
 		scShot.screenshot("//selectCity.png");
+		explicitWait(Bangalore,5);
 		Bangalore.click();
 	}
 
 	
+	
+	//Closing the pop-up
 	public void stopAd()
 	{
 		try

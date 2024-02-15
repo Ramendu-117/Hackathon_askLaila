@@ -161,19 +161,20 @@ public class results extends BasePage {
 			//Clicking on the review button and writing a review 
 			WebElement reviewButton = driver.findElement(By.xpath("(//button[@class='hidden-xs btn btn-default cardFooterButtonBlue'])["+randomNumber+"]"));
 			highlightElement(reviewButton);
+			explicitWait(reviewButton,5);
 			reviewButton.click();
 			String reviewInput = comment;
-			js.executeScript("arguments[0].scrollIntoView();",review); 
 			reviewBox.sendKeys(reviewInput);
 			Thread.sleep(2000);
 			scShot.screenshot("//writeReview.png");
 			driver.navigate().back();
 			
 			
-			//Clicking on the share button and then clicking on both the facebook and twitter option
+			//Clicking on the share button and then clicking on both the Fb and then giving wrong input and capturing the message and then clicking on twitter option
 			WebElement share = driver.findElement(By.xpath("(//i[@class='glyphicon glyphicon-share whiteColor'])["+randomNumber+"]"));
 			highlightElement(share);
 			js.executeScript("arguments[0].scrollIntoView();",share);
+			explicitWait(share,5);
 			share.click();
 			Thread.sleep(2000);
 			scShot.screenshot("//shareButton.png");

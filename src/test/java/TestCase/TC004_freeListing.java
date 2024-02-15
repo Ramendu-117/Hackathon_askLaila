@@ -8,7 +8,7 @@ import Utilities.takeScreenShot;
 public class TC004_freeListing extends TC003_results {
 	
 	@Test(priority = 7, groups = {"master", "regression"})
-	public void test7() throws Exception
+	public void clickingFreelisting() throws Exception
 	{
 		logger.info("Clicking on the free listiing button ...");
 		freeListing fl= new freeListing(driver); 
@@ -20,7 +20,7 @@ public class TC004_freeListing extends TC003_results {
 	}
 	
 	@Test(priority = 8, groups = {"master", "regression"})
-	public void test8() throws Exception
+	public void clickLogin() throws Exception
 	{
 		logger.info("Clickcing on the ClickHereToLogin button ...");
 		freeListing fl= new freeListing(driver); 
@@ -30,18 +30,18 @@ public class TC004_freeListing extends TC003_results {
 	}
 	
 	@Test(priority = 9, groups = {"master", "sanity"})
-	public void test9() throws Exception
+	public void enteringWrongInputs() throws Exception
 	{
 		logger.info("Entering invalid username and password  ...");
 		freeListing fl= new freeListing(driver); 
-		fl.clicklogin("yegfhbji", "hgdfdkfl");
+		fl.clicklogin("wrong_id", "wrong_password");
 		Thread.sleep(2000);
 		takeScreenShot scShot = new takeScreenShot(driver);
 		scShot.screenshot("//invalidInput.png");
 	}
 	
 	@Test(priority = 10, groups = {"master", "regression"})
-	public void test10() throws InterruptedException
+	public void getErrorMessage() throws InterruptedException
 	{
 		logger.info("Getting the error message and printing it ...");
 		freeListing fl= new freeListing(driver); 
@@ -49,7 +49,7 @@ public class TC004_freeListing extends TC003_results {
 	}
 	
 	@Test(priority = 11, groups = {"master", "regression"})
-	public void test11() throws InterruptedException
+	public void backToSearchPage() throws InterruptedException
 	{
 		freeListing fl= new freeListing(driver); 
 		fl.backToMainPage();

@@ -8,27 +8,29 @@
 	<test thread-count="5" name="Chrome hackathon">
   	<parameter name ="browser" value = "chrome" />
   	<parameter name ="os" value = "Windows" />
+  	
   	<groups>
-  	<run>
-  		<include name="master" />
-  	</run>
+  		<run>
+  			<include name="master" />
+  		</run>
   	</groups>
+    
     <classes>
       <class name="TestCase.TC005_gymResults"/>
       <class name="TestBase.BaseClass"/>
     </classes>
+  
   </test>
-	
-
-  <test thread-count="5" name="Edge hackathon">
+	<test thread-count="5" name="Edge hackathon">
   	<parameter name ="browser" value = "edge" />
   	<parameter name ="os" value = "Windows" />
-
-  		<groups>
+	
+	<groups>
   	<run>
   		<include name="master" />
   	</run>
   	</groups>
+    
     <classes>
       <class name="TestCase.TC005_gymResults"/>
       <class name="TestBase.BaseClass"/>

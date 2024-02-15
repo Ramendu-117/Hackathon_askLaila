@@ -10,7 +10,7 @@ public class TC002_homePage extends TC001_askLaila {
 
 
 	@Test(priority = 4, groups = {"master", "regression"})
-	public void test4() throws Exception
+	public void enteringInputs() throws Exception
 	{
 		logger.info("Giving the input in the searchbox...");
 		
@@ -27,7 +27,7 @@ public class TC002_homePage extends TC001_askLaila {
 	
 	
 	@Test(priority = 12, groups = {"master", "regression"})
-	public void test12() throws Exception
+	public void clickingGym() throws Exception
 	{
 		logger.info("Scrolling till the gym and clicking the gym button ...");
 		homePage hp = new homePage(driver);

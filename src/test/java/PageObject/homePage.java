@@ -26,15 +26,22 @@ public class homePage extends BasePage{
 	//Actions
 	public void clickButton() throws InterruptedException
 	{
+		explicitWait(clickButton,5);
 		clickButton.click();
 	}
 	
+	
+	
+	//Entering the search element and then clicking the search button
 	public void enterElement(String keyWord)
 	{
 		highlightElement(searchBox);
+		explicitWait(searchBox,5);
 		searchBox.sendKeys(keyWord);
 	}
 	
+	
+	//Handling the pop-up
 	public void stopAd()
 	{
 		try
@@ -50,14 +57,19 @@ public class homePage extends BasePage{
 		}
 	}
 	
+	
+	//Scrolling up-to the gym box
 	public void scroll() throws InterruptedException
 	{
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();",scrollUpto);
 	}
 	
+	
+	//Clicking on the gym
 	public void clickGym()
 	{
+		explicitWait(gym,5);
 		gym.click();
 	}
 	

@@ -9,7 +9,7 @@ public class TC005_gymResults extends TC004_freeListing {
 	
 	
 	@Test(priority = 13, groups = {"master", "regression"})
-	public void test13() throws Exception
+	public void gettingSubCategory() throws Exception
 	{
 		logger.info("Clicking the subcategory menu and getting and printing the subcategory elements ...");
 		gymResults gr = new gymResults(driver);

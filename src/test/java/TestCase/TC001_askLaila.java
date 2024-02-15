@@ -10,7 +10,7 @@ import TestBase.BaseClass;
 public class TC001_askLaila   extends BaseClass
 {
 	@Test(priority = 1, groups = {"master", "regression"})
-	public void test1() throws InterruptedException
+	public void ignoreAd() throws InterruptedException
 	{
 		logger.info("Selecting i'm on raoming mode ...");
 		askLaila jD = new askLaila(driver);
@@ -22,7 +22,7 @@ public class TC001_askLaila   extends BaseClass
 	}
 
 	@Test(priority = 2, groups = {"master", "regression"})
-	public void test2() throws Exception
+	public void selectCountry() throws Exception
 	{
 		logger.info("Selecting the country : India ...");
 		askLaila jD = new askLaila(driver);
@@ -34,7 +34,7 @@ public class TC001_askLaila   extends BaseClass
 	
 	
 	@Test(priority = 3, groups = {"master", "regression"})
-	public void test3() throws Exception
+	public void selectCity() throws Exception
 	{
 		logger.info("Selecting the city : Bangalore ...");
 		askLaila jD = new askLaila(driver);
